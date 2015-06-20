@@ -151,7 +151,11 @@ function checkSites() {
 			sendRequest('https://mail.google.com/mail/feed/atom', function (response) {
 				var count = (response.match(/<entry>/g) || []).length;
 				cAlerts = parseInt(cAlerts) + parseInt(count);
-				setGMail(count);
+				if ( count >= 20 ) {
+					setGMail("20+");
+				} else {
+					setGMail(count);
+				}
 				chrome.storage.local.set({'gmailCount': count});
 
 				if ( count > 0 ) {
