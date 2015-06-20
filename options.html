@@ -1,0 +1,51 @@
+<!--
+	File: options.html
+	Author: Gregory Hoople
+
+	File for altering the settings to Notify
+-->
+
+<!DOCTYPE html>
+<html>
+	<head><title>Notify Extension Options</title></head>
+	<body bgcolor="#CCDDEE">
+
+
+		<table align="center" cellpadding="3" cellspacing="1" border="0"
+			style="max-width: 800px; min-width: 400px;
+				max-height: 800px; min-height: 200px;"
+				bgcolor="#DDDDDD">
+			<tr align="center" height="10px" bgcolor="#BBBBBB">
+				<th colspan="2"><b>Notify Options</b></th>
+			</tr>
+			<tr valign="top">
+				<td colspan="2">
+					<label>
+						<input type="checkbox" id="facebook">
+						Enable Facebook
+					</label>
+					<br>
+					<label>
+						<input type="checkbox" id="gmail">
+						Enable GMail
+					</label>
+					<br>
+					<label>
+						<input type="checkbox" id="gvoice">
+						Enable Google Voice
+					</label>
+				</td>
+			</tr>
+			<tr height="50px">
+				<td>
+					<button id="save">Save</button>
+				</td>
+				<td>
+					<div align="right" id="status"></div>
+				</td>
+			</tr>
+		</table>
+
+		<script src="options.js"></script>
+	</body>
+</html>

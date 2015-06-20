@@ -1,0 +1,70 @@
+<!--
+	File: popup.html
+	Author: Gregory Hoople
+
+	File displayed when clicking the extensions icon.
+-->
+
+<!doctype html>
+<!--
+ This page is shown when the extension button is clicked, because the
+ "browser_action" field in manifest.json contains the "default_popup" key with
+ value "popup.html".
+ -->
+<html>
+	<head>
+		<title>Notify</title>
+		<style>
+			a {
+				//text-decoration: none;
+				color: blue;
+			}
+			body {
+				font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
+				font-size: 100%;
+			}
+			#gooMess {
+				/* avoid an excessively wide status text */
+				white-space: pre;
+				text-overflow: ellipsis;
+				overflow: hidden;
+				max-width: 400px;
+				font-size: 70%;
+				color: grey;
+			}
+			#gvt {
+				/* avoid an excessively wide status text */
+				white-space: pre;
+				text-overflow: ellipsis;
+				overflow: hidden;
+				max-width: 400px;
+				font-size: 70%;
+				color: grey;
+			}
+			#note {
+				font-size: 75%;
+			}
+			.right {
+					font-size: 75%;
+					float:right;
+			}
+
+		</style>
+
+		<span id="note"></span>
+		<span class="right"><a href="options.html">Options</a></span>
+
+		<hr>
+		<div id="content"></div>
+
+		<!--
+			- JavaScript and HTML must be in separate files: see our Content Security
+			- Policy documentation[1] for details and explanation.
+			-
+			- [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
+		-->
+		<script src="popup.js"></script>
+	</head>
+	<body>
+	</body>
+</html>
