@@ -4,30 +4,42 @@
 // File used by "popup.html" to alter the states of
 // elements of that page.
 
+// These functions are called by "background.js" to
+// modify the html fields of "popup.html"
+
+// Sets the current status ie. "Refreshing..."
 function renderStatus(text) {
   document.getElementById('note').textContent = text;
 }
 
+// Sets the count of google mail
 function setGoogle(text) {
 	document.getElementById('goo').textContent = '(' + text + ")";
 }
 
+// Sets the message field of google mail
 function setGMailMessage(text) {
 	document.getElementById('gooMess').innerHTML = text;
 }
 
+// Sets the count of facebook
 function setFacebook(text) {
 	document.getElementById('fb').textContent = '(' + text + ")";
 }
 
+// Sets the count of google voice
 function setGVoice(text) {
 	document.getElementById('gv').textContent = '(' + text + ")";
 }
 
+// Sets the message field of google voice
 function setGVoiceText(text) {
 	document.getElementById('gvt').innerHTML = text;
 }
 
+// Scans through "popup.html" for any links and adds a
+// function to each so that clicking them will open
+// a new tab and load the correct location.
 function refreshLinks() {
 	var links = document.getElementsByTagName("a");
 	for (var i = 0; i < links.length; i++) {
@@ -41,6 +53,9 @@ function refreshLinks() {
 	}
 }
 
+// This function is called when "popup.html" finishes loading.
+// It will load which websites are enabled and adds specific
+// html tags that "background.js" uses to add information to.
 document.addEventListener('DOMContentLoaded', function() {
 	document.body.style.width = '400px';
 	renderStatus('Status');
@@ -51,9 +66,9 @@ document.addEventListener('DOMContentLoaded', function() {
 	var cont = document.getElementById('content');
 	cont.innerHTML = "";
 
-	eFB = true;
-	eGM = true;
-	eGV = true;
+	eFB = true; // Facebook enabled
+	eGM = true; // Google Mail enabled
+	eGV = true; // Google Voice enabled
 	chrome.storage.sync.get({
 		eface: true,
 		egmail: true,
